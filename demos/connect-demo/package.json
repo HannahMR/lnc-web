@@ -11,7 +11,9 @@
     "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "add-text-to-image": "^1.0.1",
     "bootstrap": "^4.6.1",
+    "fs": "^0.0.1-security",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
@@ -44,6 +46,9 @@
       "last 1 safari version"
     ]
   },
+  "browser": {
+    "fs": false
+ }, 
   "devDependencies": {
     "prettier": "2.6.2"
   }

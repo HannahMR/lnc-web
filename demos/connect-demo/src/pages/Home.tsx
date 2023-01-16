@@ -1,6 +1,7 @@
 import React from 'react';
-import GetInfo from '../components/GetInfo';
+// import GetInfo from '../components/GetInfo';
 import Page from '../components/Page';
+import MakeMeme from '../components/MakeMeme';
 import useLNC from '../hooks/useLNC';
 
 const Home: React.FC = () => {
@@ -14,7 +15,7 @@ const Home: React.FC = () => {
           ? 'You are now connected to your Lightning node.'
           : 'Connect or Login to view your Lightning node info.'}
       </p>
-      <GetInfo />
+      <MakeMeme />
     </Page>
   );
 };
