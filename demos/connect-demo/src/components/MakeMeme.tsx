@@ -1,29 +1,14 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Button, Col, Container, Form, Row, Table} from 'react-bootstrap';
-import useLNC from '../hooks/useLNC';
 import meme from '../nagging-node.jpg';
 import {toPng} from "html-to-image";
 
 const MakeMeme: React.FC = () => {
-  const {lnc} = useLNC();
-  const [info, setInfo] = useState<any>();
 
   const [generating, setGenerating] = useState(false);
   const [memeImage, setMemeImage] = useState<any>(null);
   const [memeText, setMemeText] = useState<any>(null);
   const memeRef = useRef(null);
-
-  useEffect(() => {
-    if (lnc.isConnected) {
-      const sendRequest = async () => {
-        const res = await lnc.lnd.lightning.getInfo();
-        setInfo(res);
-      };
-      sendRequest();
-    }
-  }, [lnc.isConnected, lnc.lnd.lightning]);
-
-  // if (!lnc.isConnected || !info) return null;
 
   // function makeMeme that convert the image-canvas to image and download it using html-to-image library
   const makeMeme = async () => {
@@ -93,10 +78,10 @@ const MakeMeme: React.FC = () => {
             className={"position-absolute d-flex flex-grow-1 flex-center align-items-center justify-content-center"}
             style={{
               top: 235,
-              left: 20,
+              left: 40,
             }}
           >
-            <div className={"text-black font-weight-bold text-xl-left w-100"} style={{fontSize: 36}}>
+            <div className={"text-black font-weight-bold text-xl-left w-100"} style={{fontSize: 40}}>
               {memeText}
             </div>
           </div>
