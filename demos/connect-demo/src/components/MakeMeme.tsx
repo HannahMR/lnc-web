@@ -10,7 +10,6 @@ const MakeMeme: React.FC = () => {
 
   const [generating, setGenerating] = useState(false);
   const [memeImage, setMemeImage] = useState<any>(null);
-  const [memeText, setMemeText] = useState<any>(null);
   const memeRef = useRef(null);
 
   useEffect(() => {
@@ -23,9 +22,9 @@ const MakeMeme: React.FC = () => {
     }
   }, [lnc.isConnected, lnc.lnd.lightning]);
 
-  // if (!lnc.isConnected || !info) return null;
+  if (!lnc.isConnected || !info) return null;
 
-  // function makeMeme that convert the image-canvas to image and download it using html-to-image library
+  // function makeMeme that converts the image-canvas to image and download it using html-to-image library
   const makeMeme = async () => {
     // Show loading
     setGenerating(true);
@@ -52,17 +51,7 @@ const MakeMeme: React.FC = () => {
   return (
     <div>
       <Form className={"w-50 mx-auto text-center bg-light p-3 my-3"}>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label><strong>Write your LNC Node here</strong></Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={2}
-            placeholder="Paste your node alias here, then click generate"
-            onChange={(e) => setMemeText(e.target.value)}
-          />
-        </Form.Group>
-
-        <Button variant={"danger"} onClick={makeMeme} disabled={!memeText || generating} className={"mr-4"}>
+        <Button variant={"danger"} onClick={makeMeme} disabled={!info.alias || generating} className={"mr-4"}>
           {generating ? "Generating..." : "Generate"}
         </Button>
       </Form>
@@ -93,11 +82,11 @@ const MakeMeme: React.FC = () => {
             className={"position-absolute d-flex flex-grow-1 flex-center align-items-center justify-content-center"}
             style={{
               top: 235,
-              left: 20,
+              left: 40,
             }}
           >
-            <div className={"text-black font-weight-bold text-xl-left w-100"} style={{fontSize: 36}}>
-              {memeText}
+            <div className={"text-black font-weight-bold text-xl-left w-100"} style={{fontSize: 40}}>
+              {info.alias}
             </div>
           </div>
         </div>
