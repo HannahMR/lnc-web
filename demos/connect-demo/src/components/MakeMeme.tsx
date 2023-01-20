@@ -1,9 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Button, Col, Container, Form, Row, Table} from 'react-bootstrap';
 import useLNC from '../hooks/useLNC';
-import meme from '../forest.jpg';
+import meme from '../nagging-node.jpg';
 import {toPng} from "html-to-image";
-// import Marker from 'react-native-image-marker';
 
 const MakeMeme: React.FC = () => {
   const {lnc} = useLNC();
@@ -58,7 +57,7 @@ const MakeMeme: React.FC = () => {
           <Form.Control
             as="textarea"
             rows={2}
-            placeholder="Paste you LNC node here, then click generate"
+            placeholder="Paste your node alias here, then click generate"
             onChange={(e) => setMemeText(e.target.value)}
           />
         </Form.Group>
@@ -81,7 +80,7 @@ const MakeMeme: React.FC = () => {
           className={`m-auto position-relative`}
           style={{width: 1000}}
         >
-          <div className={"position-absolute w-100 h-100"} style={{backgroundColor: 'rgba(0,0,0,0.7)'}}/>
+          <div className={"position-absolute w-100 h-100"} style={{backgroundColor: 'rgba(0,0,0,0)'}}/>
 
           <img
             src={meme}
@@ -91,14 +90,13 @@ const MakeMeme: React.FC = () => {
           />
 
           <div
-            className={"position-absolute h-100 d-flex flex-grow-1 flex-center align-items-center justify-content-center"}
+            className={"position-absolute d-flex flex-grow-1 flex-center align-items-center justify-content-center"}
             style={{
-              top: 0,
-              left: 0,
-              right: 0,
+              top: 235,
+              left: 20,
             }}
           >
-            <div className={"text-white font-weight-bold text-xl-center w-75"} style={{fontSize: 38}}>
+            <div className={"text-black font-weight-bold text-xl-left w-100"} style={{fontSize: 36}}>
               {memeText}
             </div>
           </div>
