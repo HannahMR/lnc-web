@@ -1,25 +1,25 @@
 # LNC Demo - Basic Connect
 
-This demo showcases the most basic flow to connect from a browser to a Lightning Terminal
-(litd) node using the `lnc-web` NPM package.
+This demo was adapted from the connect demo found in the Lightning Labs lnc-web repo. It is designed to demonstrat how LNC can be used. Using this demo site, you can connect your node and your node alias will be pulled in and used to generate a meme about your node! 
+
+Currently you can connect an LND Lightning node that is also running litd.
 
 ## Running the demo
 
-To run the demo, you'll need to have NodeJS installed and a Lightning Terminal node
-accessible that you can obtain a pairing phrase from.
+To run the demo, you'll need to have NodeJS installed and an LND Lightning node with litd accessible that you can obtain a pairing phrase from.
 
 1. Clone this repo
    ```sh
-   $ git clone https://github.com/lightninglabs/lnc-web.git
-   $ cd lnc-web/demos/connect-demo
+   $ git clone https://github.com/HannahMR/lnc-web/ 
+   $ cd lnc-web/meme-demo 
    ```
 2. Install the dependencies
    ```sh
-   $ yarn install
+   $ npm install
    ```
 3. Start the web app
    ```sh
-   $ yarn start
+   $ npm start
    ```
    Your browser should open to http://localhost:3000 and you will see the home page.
 
@@ -134,10 +134,9 @@ Enter your pairing phrase and a new password to use so you don't need to login a
 
 ### Welcome page when connected
 
-After connecting to your node, you'll be redirected back to the welcome page, but now it
-will display some information obtained from calling `GetInfo` on `lnd`.
+After connecting to your node, you'll be redirected back to the welcome page, but now you will see a Genrate button. When the button is pressed information obtained from calling `GetInfo` on `lnd` will be used to add the connected node's alias to a meme!.
 
-![3_connected](./public/img/3_connected.png)
+![3_connected](./public/img/5_generate.png)
 
 ### Login page
 
