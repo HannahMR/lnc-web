@@ -4,6 +4,8 @@ This demo was adapted from the connect demo found in the Lightning Labs lnc-web 
 
 Currently you can connect an LND Lightning node that is also running litd.
 
+You can also checkout this app prior to adding LNC via the pre-lnc branch. 
+
 ## Running the demo
 
 To run the demo, you'll need to have NodeJS installed and an LND Lightning node with litd accessible that you can obtain a pairing phrase from.
