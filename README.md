@@ -126,19 +126,19 @@ useEffect(() => {
 
 ### Welcome page with Connect button
 
-![1_welcome](./public/img/1_welcome.png)
+![1_welcome](./meme-demo/public/img/1_welcome.png)
 
 ### Connect page
 
 Enter your pairing phrase and a new password to use so you don't need to login again
 
-![2_connect](./public/img/2_connect.png)
+![2_connect](./meme-demo/public/img/2_connect.png)
 
 ### Welcome page when connected
 
 After connecting to your node, you'll be redirected back to the welcome page, but now you will see a Genrate button. When the button is pressed information obtained from calling `GetInfo` on `lnd` will be used to add the connected node's alias to a meme!.
 
-![3_connected](./public/img/5_generate.png)
+![3_connected](./meme-demo/public/img/5_generate.png)
 
 ### Login page
 
@@ -147,4 +147,4 @@ page. It will detect that you have already connected from this browser in the pa
 display a "Login" button instead of "Connect". When you click "Login", you'll be take to
 the Login page where you only need to provide your password to reconnect to your node.
 
-![4_login](./public/img/4_login.png)
+![4_login](./meme-demo/public/img/4_login.png)
