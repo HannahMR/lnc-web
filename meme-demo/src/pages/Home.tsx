@@ -9,11 +9,16 @@ const Home: React.FC = () => {
 
   return (
     <Page>
-      <h2 className="text-center">Welcome to lnc-web</h2>
+      <h2 className="text-center">Welcome to the LNC meme generator</h2>
       <p className="text-center">
         {lnc.isConnected
           ? 'You are now connected to your Lightning node.'
-          : 'Connect or Login to view your Lightning node info.'}
+          : 'Connect or Login to generate a custom meme!'}
+      </p>
+      <p className="text-center">
+        {lnc.isConnected
+          ? ' '
+          : '!!!Please connect testnet nodes using the read-only option!!!  Instructions -> docs.lightning.engineering'}
       </p>
       <MakeMeme />
     </Page>

@@ -23,7 +23,7 @@ const Page: React.FC<Props> = ({ children }) => {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            LNC Demo
+            LNC Demo - Meme Edition!
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
